@@ -1,0 +1,41 @@
+{
+  "name": "heyama-backend",
+  "version": "1.0.0",
+  "description": "The backend for Heyama Test",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Talla",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1043.0",
+    "aws-sdk": "^2.1693.0",
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.2",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.4.1",
+    "express-rate-limiter": "^1.3.1",
+    "html-to-text": "^10.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.1",
+    "morgan": "^1.10.1",
+    "multer": "^2.1.1",
+    "node": "^22.0.0",
+    "nodemailer": "^8.0.7",
+    "nodemon": "^3.1.14",
+    "sharp": "^0.34.5",
+    "slugify": "^1.6.9",
+    "socket.io": "^4.8.3",
+    "validator": "^13.15.35",
+    "xss-clean": "^0.1.4"
+  },
+  "engines": {
+    "node": "^22.0.0"
+  }
+}
