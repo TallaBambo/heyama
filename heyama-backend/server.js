@@ -26,15 +26,7 @@ const io = new Server(server, {
     credentials: true,
   },
   allowEIO3: true,
-  transports: ['websocket']
-});
-
-io.on("connection", (socket) => {
-  console.log("A user connected:", socket.id);
-
-  socket.on("disconnect", () => {
-    console.log("User disconnected");
-  });
+  transports: ["websocket"],
 });
 
 app.set("socketio", io);

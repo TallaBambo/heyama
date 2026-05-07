@@ -38,7 +38,6 @@ export default function Home() {
 
   useEffect(() => {
     socket.on("post_created", (newPost) => {
-      console.log("New post received via socket!", newPost);
       setPosts((prev) => [newPost, ...prev]);
     });
 
@@ -63,9 +62,11 @@ export default function Home() {
       <h1>Fill and submit the form</h1>
       <form
         action={async (formData) => {
-          await addPostWithValues(formData);
-          setDescription("");
-          setTitle("");
+          const status = await addPostWithValues(formData);
+          if (status === "success") {
+            setDescription("");
+            setTitle("");
+          }
           setIsSubmitting(false);
         }}
         onSubmit={() => {

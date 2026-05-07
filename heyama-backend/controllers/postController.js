@@ -94,6 +94,12 @@ exports.processImages = catchAsync(async (req, res, next) => {
 // CREATE /////////////////////////////////////////////
 
 exports.addPost = catchAsync(async (req, res, next) => {
+  const existingPost = await Post.findOne({ title: req.body.title });
+
+  if (existingPost) {
+    return next(new AppError("A post already exists with this title.", 404));
+  }
+
   const post = await Post.create(req.body);
 
   req.app.get("socketio").emit("post_created", post);
